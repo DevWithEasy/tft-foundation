@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.input{
+    @apply w-full p-2 rounded border-2 focus:outline-none focus:border-blue-500 placeholder:text-xs
+}
+.joblink-text{
+    @apply flex items-center space-x-1 text-gray-600 text-sm
+}
