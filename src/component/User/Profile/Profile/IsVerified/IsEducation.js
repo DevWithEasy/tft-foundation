@@ -2,7 +2,7 @@
 const IsEducation = ({ssc,collage,bsc,msc}) => {
     return (
         <table className="w-full text-center mt-2">
-            <tr className="border-b-2 bg-blue-100 text-center font-bold">
+            <tr className="border bg-blue-100 text-center font-bold">
                     <td>Institute Name</td>
                     <td>Season</td>
                     <td>Passing Year</td>

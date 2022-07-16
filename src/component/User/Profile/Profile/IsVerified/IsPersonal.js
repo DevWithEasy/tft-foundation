@@ -4,7 +4,7 @@ const IsPersonal = ({profile}) => {
     const {permanentAddress,presentAddress,fName,mName,dob,marital,gender}=profile
     return (
         <div className='px-2'>
-            <h3 className="bg-gray-100 px-2 p-1 font-bold">Personal Information :</h3>
+            <h3 className="bg-gray-200 px-2 p-1 text-xl font-bold">Personal Information :</h3>
             <table>
                 <tr>
                     <td>Father's Name</td>

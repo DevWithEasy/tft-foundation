@@ -13,8 +13,10 @@ import IsPersonal from './IsPersonal';
 const IsVerified = ({profile}) => {
   const user = useSelector(state=>state.user)
   const {id}= profile
-    return (
-        <div className="">
+    return (<>
+        {
+          id ? 'loading':
+          <div className="">
             <div className="relative bg-blue-50 h-36 ">
               <img
                 src={profile.profileImg}
@@ -39,7 +41,7 @@ const IsVerified = ({profile}) => {
               </div>
             </div>
             <div className="px-2">
-              <h3 className="bg-gray-100 px-2 p-1 font-bold text-2xl">Experience :</h3>
+              <h3 className="bg-gray-200 px-2 p-1 font-bold text-2xl">Experience :</h3>
               {profile.presentCompany.name && <PresentCompany presentCompany={profile.presentCompany}/>}
             </div>
             <div className="px-2">
@@ -47,12 +49,14 @@ const IsVerified = ({profile}) => {
               profile.previousJob.map((job,index)=><IsPreviousJob key={index} job={job}/>)}
             </div>
             <div className="px-2">
-              <h3 className="bg-gray-100 px-2 p-1 font-bold text-2xl">Education :</h3>
+              <h3 className="bg-gray-200 px-2 p-1 font-bold text-2xl">Education :</h3>
               <IsEducation ssc={profile.ssc} bsc={profile.bsc} collage={profile.collage} msc={profile.msc}/>
             </div>
             {/* personal informatio */}
             <IsPersonal profile={profile}/>
           </div>
+        }
+      </>
     );
 };
 
