@@ -47,7 +47,7 @@ const PersonalInfo = ({ user, handleInput }) => {
           onChange={handleChange}
         />
         <div className="flex gap-x-1">
-          <div className="w-4/12">
+          <div className="w-1/2">
             <label className="text-sm pl-1">Date of Birth:</label>
             <input
               type="date"
@@ -57,7 +57,29 @@ const PersonalInfo = ({ user, handleInput }) => {
               onChange={handleChange}
             />
           </div>
-          <div className="w-4/12">
+          <div className="w-1/2">
+            <label className="text-sm pl-1">NID No:</label>
+            <input
+              type="text"
+              name="nidNo"
+              value={user.nidNo}
+              className="w-full p-2 border-2 focus:outline-blue-500 rounded"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="flex gap-x-1">
+        <div className="w-1/2">
+            <label className="text-sm pl-1">Nationality:</label>
+            <input
+              type="text"
+              name="nationality"
+              value={user.nationality}
+              className="w-full p-2 border-2 focus:outline-blue-500 rounded"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="w-1/2">
             <label className="text-sm pl-1">Gender:</label>
             <select
               name="gender"
@@ -70,18 +92,39 @@ const PersonalInfo = ({ user, handleInput }) => {
               <option value="Others">Others</option>
             </select>
           </div>
-          <div className="w-4/12">
-            <label className="text-sm pl-1">Marital Status:</label>
-            <select
-              name="marital"
-              className="w-full p-2 border-2 focus:outline-blue-500 rounded"
-              onChange={handleChange}
-            >
-              <option value="">select marital status</option>
-              <option value="Married">Married</option>
-              <option value="Unmarried">Unmarried</option>
-            </select>
-          </div>
+          
+        </div>
+        <div className="flex gap-x-1">
+          <div className="w-1/2">
+              <label className="text-sm pl-1">Blood Group:</label>
+              <select
+                name="bloodGroup"
+                className="w-full p-2 border-2 focus:outline-blue-500 rounded"
+                onChange={handleChange}
+              >
+                <option value="">select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+            <div className="w-1/2">
+              <label className="text-sm pl-1">Marital Status:</label>
+              <select
+                name="marital"
+                className="w-full p-2 border-2 focus:outline-blue-500 rounded"
+                onChange={handleChange}
+              >
+                <option value="">select Marital Status</option>
+                <option value="Married">Married</option>
+                <option value="Unmarried">Unmarried</option>
+              </select>
+            </div>
         </div>
         {/* -------------------present Address -----------------------*/}
         <div className="mt-2 space-y-1">
