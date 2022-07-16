@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from 'sweetalert';
 import { MdSchool } from "react-icons/md";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { updateUserProfile } from './../../../../FirebaseManager/firebaseStore';
@@ -252,7 +253,7 @@ const EducationInfo = ({ user, handleInput }) => {
             </div>
           </div>
           <button className="px-10 py-1 bg-blue-500 text-white rounded cursor-pointer"
-            onClick={()=>updateUserProfile(user.id,user)}
+            onClick={()=>updateUserProfile(user.id,user,swal)}
           >
             Save
           </button>

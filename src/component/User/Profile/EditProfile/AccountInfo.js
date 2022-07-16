@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from 'sweetalert';
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { MdManageAccounts } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -87,7 +88,7 @@ const AccountInfo = ({ user, handleChange }) => {
         />
         <button
           className="px-10 py-1 mt-1 bg-blue-500 text-white rounded cursor-pointer"
-          onClick={()=>updateUserProfile(user.id,user)}
+          onClick={()=>updateUserProfile(user.id,user,swal)}
         >
           Save
         </button>

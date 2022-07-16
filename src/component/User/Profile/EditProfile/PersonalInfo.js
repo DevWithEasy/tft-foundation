@@ -8,7 +8,7 @@ const PersonalInfo = ({ user, handleInput }) => {
     handlePresentAddressInput,
     handlePermanentAddressInput
   } = handleInput;
-  const [personal, setPersonal] = useState(false);
+  const [personal, setPersonal] = useState(true);
   return (
     <div className="space-y-2">
       <h3
@@ -48,16 +48,6 @@ const PersonalInfo = ({ user, handleInput }) => {
         />
         <div className="flex gap-x-1">
           <div className="w-1/2">
-            <label className="text-sm pl-1">Date of Birth:</label>
-            <input
-              type="date"
-              name="dob"
-              value={user.dob}
-              className="w-full p-2 border-2 focus:outline-blue-500 rounded"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="w-1/2">
             <label className="text-sm pl-1">NID No:</label>
             <input
               type="text"
@@ -67,14 +57,24 @@ const PersonalInfo = ({ user, handleInput }) => {
               onChange={handleChange}
             />
           </div>
-        </div>
-        <div className="flex gap-x-1">
-        <div className="w-1/2">
+          <div className="w-1/2">
             <label className="text-sm pl-1">Nationality:</label>
             <input
               type="text"
               name="nationality"
               value={user.nationality}
+              className="w-full p-2 border-2 focus:outline-blue-500 rounded"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="flex gap-x-1">
+        <div className="w-1/2">
+            <label className="text-sm pl-1">Date of Birth:</label>
+            <input
+              type="date"
+              name="dob"
+              value={user.dob}
               className="w-full p-2 border-2 focus:outline-blue-500 rounded"
               onChange={handleChange}
             />

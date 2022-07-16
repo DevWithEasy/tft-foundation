@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { FaKey, FaUserAlt } from "react-icons/fa";
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import { signInHandler } from '../../../FirebaseManager/firebaseStore';
 import { handleLoginInput } from "../../../FunctionManager/FunctionManager";
 import Loading from "../../Loading/Loading";
@@ -20,7 +21,7 @@ const LogIn = () => {
       loading ? <Loading text='Logging'/>:
       <div className="p-2 space-y-6">
         <h1 className="text-2xl font-bold">Login to TFT Foundation</h1>
-        <form className="w-full space-y-3" onSubmit={(e)=>signInHandler(e,loged.email,loged.password,dispatch,location,navigate,setLoading)}>
+        <form className="w-full space-y-3" onSubmit={(e)=>signInHandler(e,loged.email,loged.password,dispatch,location,navigate,setLoading,swal)}>
           <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100">
             <span className="flex items-center px-3 "><FaUserAlt className="text-gray-400"/></span>
           <input

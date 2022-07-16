@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from 'sweetalert';
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { MdWork } from "react-icons/md";
 import { addPreviousJob, updateUserProfile } from './../../../../FirebaseManager/firebaseStore';
@@ -67,7 +68,7 @@ const ExperienceInfo = ({ user, handlePresentCompanyInput,previousJob,handlePrev
             </div>
           </div>
           <button className="px-10 py-1 bg-blue-500 text-white rounded cursor-pointer"
-                  onClick={()=>updateUserProfile(user.id,user)}  
+                  onClick={()=>updateUserProfile(user.id,user,swal)}  
           >
             Save
           </button>
@@ -132,7 +133,7 @@ const ExperienceInfo = ({ user, handlePresentCompanyInput,previousJob,handlePrev
             </div>
           </div>
           <button className="p-2 w-24 mt-2 bg-blue-500 rounded text-white "
-            onClick={()=>addPreviousJob(user.id,previousJob)}
+            onClick={()=>addPreviousJob(user.id,previousJob,swal)}
             >
             Add
           </button>

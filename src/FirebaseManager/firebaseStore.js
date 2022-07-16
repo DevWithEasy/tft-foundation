@@ -41,22 +41,22 @@ export const signOutHandler=(dispatch,navigate,menu,setMenu)=>{
     })
 }
 //------------------------creat user with email password---------------------
-export const signUpHandler=(e,email,password,navigatFunction)=>{
+export const signUpHandler=(e,email,password,navigatFunction,swal)=>{
     e.preventDefault()
     createUserWithEmailAndPassword(auth, email, password)
     .then( (res)=> {
-        console.log('success')
+      swal("Successful!", "Account created.Please verify now!", "success")
         if(res){
             navigatFunction('/login')
         }
   })
   .catch((err) => {
-    console.log(err)
+    swal("Failed!", "something wrong.Try again!", "error")
   });
 }
 
 //-------------------user sign in with email password---------------
-export const signInHandler=async(e,email,password,dispachFunction,location,navigate,setLoading)=>{
+export const signInHandler=async(e,email,password,dispachFunction,location,navigate,setLoading,swal)=>{
     e.preventDefault()
     setLoading(true)
     await signInWithEmailAndPassword(auth, email, password)
@@ -70,7 +70,7 @@ export const signInHandler=async(e,email,password,dispachFunction,location,navig
       }
     })
     .catch((err) => {
-      console.log(err)
+      swal("Failed!", "Please Enter correct mail and password!", "success")
       setLoading(false)
     });
 
@@ -78,35 +78,35 @@ export const signInHandler=async(e,email,password,dispachFunction,location,navig
 
 
 //------------------------Update User Data in database------------------------
-export const updateUserProfile = (id,userProfileData)=>{
+export const updateUserProfile = (id,userProfileData,swal)=>{
     const profileDocRef = doc(db,'users',id)
     updateDoc(profileDocRef,userProfileData)
     .then(res=>{
-      alert('profile update suceesfully')
+      swal("Successful!", "Profile updated!", "success")
       updateProfile(auth.currentUser, {
         displayName: userProfileData.name, photoURL: userProfileData.profileImg
       })
       .then(res=>{
-        console.log('profile img update success');
+        swal("Successful!", "Profile Photo updated!", "success")
       })
       .catch(err=>{
-        alert('profile update failed');
+        swal("Failed!", "Profile Photo update!", "error")
       })
     })
     .catch(err=>{
-      alert('profile update failed');
+      swal("Failed!", "Profile update!", "error")
     })
 }
-export const addPreviousJob=async(id,previousJob)=>{
+export const addPreviousJob=async(id,previousJob,swal)=>{
   const profileDocRef = doc(db,'users',id)
   await updateDoc(profileDocRef, {
     previousJob: arrayUnion(previousJob)
   })
   .then(res=>{
-    alert('Experience add success');
+    swal("Successful!", "Experience Added!", "success");
   })
   .catch(err=>{
-    alert('Experience add failed');
+    
   })
 }
 //-----------------------send verification email-------------------------

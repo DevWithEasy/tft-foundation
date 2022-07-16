@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from 'sweetalert';
 import { FaKey, FaUserAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -20,10 +21,10 @@ const Registration = () => {
       <div className="">
         <h1 className="text-2xl font-bold">Welcome to TFT Foundation</h1>
         <span className="text-gray-400 text-sm block w-3/4">Join our professional family and creat your professional profile easily.
-        Communicate all member and get job offer and ircular
+        Communicate all member and get job offer and circular
         </span>
       </div>
-      <form className="w-full space-y-3" onSubmit={(e)=>signUpHandler(e,signUp.email,signUp.password,navigate)}>
+      <form className="w-full space-y-3" onSubmit={(e)=>signUpHandler(e,signUp.email,signUp.password,navigate,swal)}>
         <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100">
           <span className="flex items-center px-3 "><FaUserAlt className="text-gray-400"/></span>
           <input

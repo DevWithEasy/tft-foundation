@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IsPersonal = ({profile}) => {
-    const {permanentAddress,presentAddress,fName,mName,dob,marital,gender}=profile
+    const {permanentAddress,presentAddress,fName,mName,dob,marital,gender,bloodGroup,nidNo,nationality}=profile
     return (
         <div className='px-2'>
             <h3 className="bg-gray-200 px-2 p-1 my-2 text-xl font-bold">Personal Information :</h3>
@@ -34,6 +34,18 @@ const IsPersonal = ({profile}) => {
                         Upzilla- {permanentAddress.upzilla} , 
                         District- {permanentAddress.district}
                     </td>
+                </tr>
+                <tr>
+                    <td>NID No</td>
+                    <td>: {nidNo}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>: {nationality}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>: {bloodGroup}</td>
                 </tr>
                 <tr>
                     <td>Gender</td>
