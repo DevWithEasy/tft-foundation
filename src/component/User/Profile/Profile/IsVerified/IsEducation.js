@@ -2,7 +2,7 @@
 const IsEducation = ({ssc,collage,bsc,msc}) => {
     return (
         <table className="w-full text-center mt-2">
-            <tr className="border-b-2 text-center font-bold">
+            <tr className="border-b-2 bg-blue-100 text-center font-bold">
                     <td>Institute Name</td>
                     <td>Season</td>
                     <td>Passing Year</td>
@@ -12,7 +12,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
             <tbody>
                 {
                     ssc.name && 
-                    <tr className="hover:bg-gray-50 border-b">
+                    <tr className="hover:bg-gray-100 border">
                     <td className="text-left">{ssc.name}</td>
                     <td>{ssc.season}</td>
                     <td>{ssc.passingYear}</td>
@@ -22,7 +22,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
                 }
                 {
                     collage.name &&
-                    <tr className="hover:bg-gray-50 border-b">
+                    <tr className="hover:bg-gray-100 border">
                     <td className="text-left">{collage.name}</td>
                     <td>{collage.season}</td>
                     <td>{collage.passingYear}</td>
@@ -32,7 +32,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
                 }
                 {
                     bsc.name &&
-                    <tr className="hover:bg-gray-50 border-b">
+                    <tr className="hover:bg-gray-100 border">
                     <td className="text-left">{bsc.name}</td>
                     <td>{bsc.season}</td>
                     <td>{bsc.passingYear}</td>
@@ -42,7 +42,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
                 }
                 {
                     msc.name &&
-                    <tr className="hover:bg-gray-50">
+                    <tr className="hover:bg-gray-100">
                     <td className="text-left">{msc.name}</td>
                     <td>{msc.season}</td>
                     <td>{msc.passingYear}</td>
