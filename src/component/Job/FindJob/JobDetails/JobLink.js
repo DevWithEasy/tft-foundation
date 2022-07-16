@@ -9,8 +9,8 @@ const JobLink = ({post}) => {
         <Link to={`/jobDetails/${post.id}`}
             className="block bg-gray-50 m-2 px-2 py-1 rounded border border-gray-300 hover:bg-gray-100"
         >
-            <p className='text-blue-500 text-xl font-semibold'>{post.position}</p>
-            <p className='font-semibold'>{post.company}</p>
+            <p className='text-blue-500 text-2xl font-semibold'>{post.position}</p>
+            <p className='font-xl font-bold'>{post.company}</p>
             <p className='joblink-text'>
                 <MdLocationOn/> 
                 <span>{post.jobLocation}</span>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const IsContact = ({contact,Icon}) => {
+const IsContact = ({type,contact,Icon}) => {
     return (
-        <a href={`tel:${contact}`} rel="noreferrer" target='_blank' className='flex items-center'><Icon size={20}/></a>
+        <a href={`${type}${contact}`} rel="noreferrer" target='_blank' className='flex items-center'><Icon size={20}/></a>
     );
 };
 

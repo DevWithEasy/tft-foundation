@@ -1,15 +1,15 @@
 import { BiEdit } from 'react-icons/bi';
-import {FiPhoneCall} from 'react-icons/fi';
-import {MdEmail} from 'react-icons/md';
-import {BsMessenger,BsFacebook} from 'react-icons/bs'
+import { BsFacebook, BsMessenger } from 'react-icons/bs';
+import { FiPhoneCall } from 'react-icons/fi';
+import { MdEmail } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import IsEducation from './IsEducation';
-import PresentCompany from './PresentCompany';
-import IsPreviousJob from './IsPreviousJob';
-import IsContact from './IsContact';
-import IsPersonal from './IsPersonal';
 import Loading from '../../../../Loading/Loading';
+import IsContact from './IsContact';
+import IsEducation from './IsEducation';
+import IsPersonal from './IsPersonal';
+import IsPreviousJob from './IsPreviousJob';
+import PresentCompany from './PresentCompany';
 
 const IsVerified = ({profile}) => {
   const user = useSelector(state=>state.user)
@@ -31,10 +31,10 @@ const IsVerified = ({profile}) => {
               <p className="text-gray-500">{profile.presentCompany.designation}</p>
               <div className="flex justify-end">
                 <div className="flex space-x-5">
-                  <IsContact contact={profile.contactNumber} Icon={FiPhoneCall}/>
-                  <IsContact contact={profile.email} Icon={MdEmail}/>
-                  <IsContact contact={profile.fbLink} Icon={BsMessenger}/>
-                  <IsContact contact={profile.fbLink} Icon={BsFacebook}/>
+                  <IsContact contact={profile.contactNumber} type='tel:' Icon={FiPhoneCall}/>
+                  <IsContact contact={profile.email} type='mail:' Icon={MdEmail}/>
+                  <IsContact contact={profile.fbLink} type='https://m.me/' Icon={BsMessenger}/>
+                  <IsContact contact={profile.fbLink} type='https://facebook.com/' Icon={BsFacebook}/>
                   {
                     user.uid === id ? <Link to={`/editprofile/${id}`} className='flex items-center'> <BiEdit/> Edit profile</Link>:''
                   }
