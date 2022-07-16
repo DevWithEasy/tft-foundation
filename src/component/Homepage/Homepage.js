@@ -22,7 +22,7 @@ const Homepage = () => {
       <div className="w-1/2 space-y-2 flex flex-col  justify-center">
           <h3 className='font-bold text-2xl'>Find your Dream</h3>
           <p className='text-gray-500'>Here you can find a job from our community peoples.</p>
-          <button  className='bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 clearfont-semibold hover:bg-white hover:text-black w-4/12'>Join community</button>
+          <button  className='bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 clearfont-semibold hover:bg-white hover:text-black w-4/12'>Find Job</button>
       </div>
     </div>
   </div>;
