@@ -9,13 +9,14 @@ import PresentCompany from './PresentCompany';
 import IsPreviousJob from './IsPreviousJob';
 import IsContact from './IsContact';
 import IsPersonal from './IsPersonal';
+import Loading from '../../../../Loading/Loading';
 
 const IsVerified = ({profile}) => {
   const user = useSelector(state=>state.user)
   const {id}= profile
     return (<>
         {
-          id ? 'loading':
+          id ? 
           <div className="">
             <div className="relative bg-blue-50 h-36 ">
               <img
@@ -55,6 +56,8 @@ const IsVerified = ({profile}) => {
             {/* personal informatio */}
             <IsPersonal profile={profile}/>
           </div>
+          :
+          <Loading text='Loading'/>
         }
       </>
     );

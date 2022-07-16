@@ -26,7 +26,6 @@ const Homepage = () => {
           <button  className='jobcircular-btn home-btn'>Find Job</button>
       </div>
     </div>
-    <Loading/>
   </div>;
 };
 export default Homepage;

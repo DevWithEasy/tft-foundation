@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { addComment, getDetails, removeComment } from '../../../../FirebaseManager/firebaseStore';
+import Loading from '../../../Loading/Loading';
 import CommentForm from './CommentForm';
 import Comments from './Comments';
 import JobDetailsText from './JobDetailsText';
@@ -26,7 +27,6 @@ const JobDetails = () => {
         [e.target.name]: e.target.value
       });
     };
-  console.log(jobDetails,comment)
     return (
         <>
             {jobDetails.author?
@@ -56,7 +56,8 @@ const JobDetails = () => {
             </div>
             
             :
-            <p>Loading</p>}
+            <Loading text='Loading'/>
+            }
             
         </>
     );

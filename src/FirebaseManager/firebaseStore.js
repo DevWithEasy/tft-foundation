@@ -56,21 +56,23 @@ export const signUpHandler=(e,email,password,navigatFunction)=>{
 }
 
 //-------------------user sign in with email password---------------
-export const signInHandler=(e,email,password,dispachFunction,location,navigate)=>{
+export const signInHandler=async(e,email,password,dispachFunction,location,navigate,setLoading)=>{
     e.preventDefault()
-    signInWithEmailAndPassword(auth, email, password)
-  .then((res) => {
-    console.log('success')
-    dispachFunction(addUser(res.user))
-    if(location.state?.from){
-        navigate(location.state.from)
-    }else{
-      navigate('/')
-    }
-  })
-  .catch((err) => {
-    console.log(err)
-  });
+    setLoading(true)
+    await signInWithEmailAndPassword(auth, email, password)
+    .then((res) => {
+      console.log('success')
+      dispachFunction(addUser(res.user))
+      if(location.state?.from){
+          navigate(location.state.from)
+      }else{
+        navigate('/')
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+      setLoading(false)
+    });
 
 }
 
