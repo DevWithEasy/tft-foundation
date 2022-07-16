@@ -182,17 +182,19 @@ export const getDetails =async(collection,id,setFunc)=>{
     })
 }
 
-export const addComment=(e,id,comment,toast)=>{
+export const addComment=async(e,id,comment,swal)=>{
   e.preventDefault()
   const commentRef= doc(db,'jobcircular',id)
-  updateDoc(commentRef,{
+  await updateDoc(commentRef,{
     comments:arrayUnion(comment)
   });
   e.target.reset()
+  swal("Successfull", "Your comment added!", "success");
 }
-export const removeComment=(id,comment,toast)=>{
+export const removeComment=async(id,comment,swal)=>{
   const commentRef= doc(db,'jobcircular',id)
-  updateDoc(commentRef,{
+  await updateDoc(commentRef,{
     comments:arrayRemove(comment)
   })
+  swal("Successfull", "Your comment delete!", "success");
 }

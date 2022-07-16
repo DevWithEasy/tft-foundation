@@ -1,6 +1,5 @@
 import jobImg from '../../assets/job.png';
 import wellcomeImg from '../../assets/wellcome.png';
-import Loading from '../Loading/Loading';
 const Homepage = () => {
   
   return <div className="">
@@ -26,6 +25,7 @@ const Homepage = () => {
           <button  className='jobcircular-btn home-btn'>Find Job</button>
       </div>
     </div>
+    
   </div>;
 };
 export default Homepage;

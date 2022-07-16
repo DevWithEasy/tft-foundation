@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsTrash } from 'react-icons/bs';
+import swal from 'sweetalert';
 
 const Comments = ({comment,removeComment,uid,id}) => {
     return (
@@ -10,7 +11,7 @@ const Comments = ({comment,removeComment,uid,id}) => {
                     <span className='text-[10px] text-gray-500'>{comment.time}</span>
                 </p>
                 {
-                    uid===comment.id ? <BsTrash onClick={()=>removeComment(id,comment)}/>:''
+                    uid===comment.id ? <BsTrash onClick={()=>removeComment(id,comment,swal)}/>:''
                 }
             </p>
             <p>{comment.text}</p>

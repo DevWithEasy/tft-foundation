@@ -1,9 +1,10 @@
 import React from 'react';
+import swal from 'sweetalert'
 
 const CommentForm = ({handleChange,addComment,id,comment}) => {
     return (
         <div>
-            <form className='' onSubmit={(e)=>addComment(e,id,comment)}>
+            <form className='' onSubmit={(e)=>addComment(e,id,comment,swal)}>
                   <textarea 
                         name="text"
                         rows="2"
