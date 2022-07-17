@@ -41,8 +41,9 @@ export const signOutHandler=(dispatch,navigate,menu,setMenu)=>{
     })
 }
 //------------------------creat user with email password---------------------
-export const signUpHandler=(e,email,password,navigatFunction,swal)=>{
-    e.preventDefault() 
+export const signUpHandler=(e,email,password,navigatFunction,swal,loading)=>{
+    e.preventDefault()
+    loading(true)
     const q = query(collection(db, "users"), where("email", "==", email));
     getDocs(q)
     .then(doc=>{
@@ -50,6 +51,7 @@ export const signUpHandler=(e,email,password,navigatFunction,swal)=>{
       doc.forEach(doc=>user.push(doc.data()))
       if(user.length>0){
         swal("Failed!", "This mail already used.Please try another email!", "error")
+        loading(false)
       }else{
         
         createUserWithEmailAndPassword(auth, email, password)

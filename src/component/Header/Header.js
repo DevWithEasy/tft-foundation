@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HiMenu } from "react-icons/hi";
+import logo from './../../assets/logo.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { signOutHandler } from "../../FirebaseManager/firebaseStore";
@@ -12,12 +13,17 @@ const Header = () => {
   return (
     <div className="">
       <div className="relative flex justify-between shadow p-3 bg-blue-500 text-white">
-        <Link to="/">
-          <span className="block ">TFT Foundation</span>
-          <span className="block text-xs">
-            Thakurgaon Food Technologist Foundation
+        <p className="flex space-x-2">
+          <img src={logo} alt="" className="h-10"/>
+          <span>
+            <Link to="/">
+            <span className="block ">TFT Foundation</span>
+            <span className="block text-xs">
+              Thakurgaon Food Technologist Foundation
+            </span>
+          </Link>
           </span>
-        </Link>
+        </p>
         <div className="flex justify-center items-center space-x-2">
           {
             user.email && <Link to={`/profile/${user.uid}`}><img src={user.photoURL} alt="" className="h-7 w-7 rounded-full" /></Link>

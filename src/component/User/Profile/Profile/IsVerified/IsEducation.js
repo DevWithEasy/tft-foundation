@@ -14,7 +14,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
             <tbody>
                 {
                     ssc.name && 
-                    <tr className="hover:bg-gray-100 border">
+                    <tr className="hover:bg-gray-100 border py-1">
                     <td className="text-left">{ssc.name}</td>
                     <td>{ssc.season}</td>
                     <td>{ssc.passingYear}</td>
@@ -24,7 +24,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
                 }
                 {
                     collage.name &&
-                    <tr className="hover:bg-gray-100 border">
+                    <tr className="hover:bg-gray-100 border py-1">
                     <td className="text-left">{collage.name}</td>
                     <td>{collage.season}</td>
                     <td>{collage.passingYear}</td>
@@ -34,7 +34,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
                 }
                 {
                     bsc.name &&
-                    <tr className="hover:bg-gray-100 border">
+                    <tr className="hover:bg-gray-100 border py-1">
                     <td className="text-left">{bsc.name}</td>
                     <td>{bsc.season}</td>
                     <td>{bsc.passingYear}</td>
@@ -44,7 +44,7 @@ const IsEducation = ({ssc,collage,bsc,msc}) => {
                 }
                 {
                     msc.name &&
-                    <tr className="hover:bg-gray-100">
+                    <tr className="hover:bg-gray-100 py-2">
                     <td className="text-left">{msc.name}</td>
                     <td>{msc.season}</td>
                     <td>{msc.passingYear}</td>

@@ -7,8 +7,10 @@ import { IsValidEmail, IsValidPassword, NotValidEmail } from "../../../FunctionM
 import { signUpHandler } from './../../../FirebaseManager/firebaseStore';
 import { handleRegInput } from './../../../FunctionManager/FunctionManager';
 import { NotValidPassword } from './../../../FunctionManager/JsxDistributer';
+import Loading from "../../Loading/Loading";
 
 const Registration = () => {
+  const [loading,setLoading] =useState(false)
   //login form state
   const [signUp, setSignUp] = useState({
     email: "",
@@ -16,15 +18,18 @@ const Registration = () => {
   });
   //handle login form navigate
   const navigate= useNavigate()
-  return (
-    <div className="p-2 space-y-6px-3 py-10 space-y-6 m-2 border rounded-md bg-gray-50">
+  return (<>
+      {
+        loading ? <Loading text='signing'/>
+        :
+        <div className="p-2 space-y-6px-3 py-10 space-y-6 m-2 border rounded-md bg-gray-50">
       <div className="">
         <h1 className="text-xl text-slate-500 font-bold">Welcome to TFT Foundation</h1>
         <span className="text-gray-400 text-sm block w-3/4">Join our professional family and creat your professional profile easily.
         Communicate all member and get job offer and circular
         </span>
       </div>
-      <form className="w-full space-y-3" onSubmit={(e)=>signUpHandler(e,signUp.email,signUp.password,navigate,swal)}>
+      <form className="w-full space-y-3" onSubmit={(e)=>signUpHandler(e,signUp.email,signUp.password,navigate,swal,setLoading)}>
         <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100 bg-white">
           <span className="flex items-center px-3 "><FaUserAlt className="text-gray-400"/></span>
           <input
@@ -62,6 +67,7 @@ const Registration = () => {
         <span>Forget your password? <Link to='/forgetPassword' className="font-bold text-blue-500">Reset now</Link></span>
       </div>
     </div>
-  );
+      }
+  </>);
 };
 export default Registration;
