@@ -43,7 +43,7 @@ const Profile = () => {
       to: ""
     },
     previousJob: [],
-    responsibity:[],
+    responsibility:[],
     ssc: {
       name: "",
       season: "",

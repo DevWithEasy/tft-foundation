@@ -1,21 +1,33 @@
-import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { db } from "../FirebaseManager/firebaseStore";
 
-export const addResponsibility=async(e,id,comment,swal)=>{
+export const addResponsibility=async(e,id,res,swal)=>{
     e.preventDefault()
-    const commentRef= doc(db,'jobcircular',id)
-    await updateDoc(commentRef,{
-      responsibility:arrayUnion(comment)
+    const resRef= doc(db,'users',id)
+    await updateDoc(resRef,{
+      responsibility:arrayUnion(res)
     });
     e.target.reset()
     swal("Successfull", "Your Responsibility added!", "success");
   }
-  export const addConnection=async(e,id,comment,swal)=>{
-    e.preventDefault()
-    const commentRef= doc(db,'jobcircular',id)
-    await updateDoc(commentRef,{
-      connection:arrayUnion(comment)
+  export const removeResponsibility=async(id,res,swal)=>{
+    const resRef= doc(db,'users',id)
+    await updateDoc(resRef,{
+      responsibility:arrayRemove(res)
     });
-    e.target.reset()
-    swal("Successfull", "Your connection added!", "success");
+    swal("Successfull", "Your Responsibility Delete!", "success");
+  }
+  export const addConnection=async(id,connectId,swal)=>{
+    const connectionRef= doc(db,'users',id)
+    await updateDoc(connectionRef,{
+      connection:arrayUnion(connectId)
+    });
+    swal("Successfull", "Your Responsibility added!", "success");
+  }
+  export const removeConnection=async(id,connectId,swal)=>{
+    const connectionRef= doc(db,'users',id)
+    await updateDoc(connectionRef,{
+      responsibility:arrayRemove(connectId)
+    });
+    swal("Successfull", "Your Responsibility Delete!", "success");
   }

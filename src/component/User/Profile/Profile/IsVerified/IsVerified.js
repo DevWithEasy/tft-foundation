@@ -9,6 +9,7 @@ import IsContact from './IsContact';
 import IsEducation from './IsEducation';
 import IsPersonal from './IsPersonal';
 import IsPreviousJob from './IsPreviousJob';
+import IsResponsibility from './IsResponsibility';
 import PresentCompany from './PresentCompany';
 
 const IsVerified = ({profile}) => {
@@ -49,12 +50,16 @@ const IsVerified = ({profile}) => {
               {profile.previousJob.length>0 && 
               profile.previousJob.map((job,index)=><IsPreviousJob key={index} job={job}/>)}
             </div>
+            {
+              profile.responsibility.length ? <IsResponsibility response={profile.responsibility} id={profile.id}/> :''
+            }
             <div className="px-2">
               <h3 className="bg-gray-200 px-2 p-1 my-1 font-bold text-2xl">Education :</h3>
               <IsEducation ssc={profile.ssc} bsc={profile.bsc} collage={profile.collage} msc={profile.msc}/>
             </div>
             {/* personal informatio */}
             <IsPersonal profile={profile}/>
+            
           </div>
           :
           <Loading text='Loading'/>

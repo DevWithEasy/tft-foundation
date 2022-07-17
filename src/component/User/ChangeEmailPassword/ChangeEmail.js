@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from "sweetalert";
 import { auth, changeEmail } from './../../../FirebaseManager/firebaseStore';
 
 const ChangeEmail = () => {
@@ -10,7 +11,7 @@ const ChangeEmail = () => {
   return (
     <div className="m-2 mt-10 p-2 bzorder rounded shadow">
       <h1 className="text-2xl underline italic mb-4">Change Email:</h1>
-      <form className="space-y-2" onSubmit={()=>changeEmail(auth,email)}>
+      <form className="space-y-2" onSubmit={(e)=>changeEmail(e,auth,email,swal)}>
         <input
           type="text"
           name="password"

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateEmail, updatePassword, updateProfile } from "firebase/auth";
-import { arrayRemove, arrayUnion, collection, doc, enableIndexedDbPersistence, getDoc, getFirestore, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
+import { arrayRemove, arrayUnion, collection, doc, enableIndexedDbPersistence, getDoc, getDocs, getFirestore, query, serverTimestamp, setDoc, updateDoc, where } from "firebase/firestore";
 import userData from "../component/User/userData";
 import { addUser, removeUser } from './../ReduxManager/Action';
 import { firebaseConfig } from './firebaseConfig';
@@ -42,17 +42,31 @@ export const signOutHandler=(dispatch,navigate,menu,setMenu)=>{
 }
 //------------------------creat user with email password---------------------
 export const signUpHandler=(e,email,password,navigatFunction,swal)=>{
-    e.preventDefault()
-    createUserWithEmailAndPassword(auth, email, password)
-    .then( (res)=> {
-      swal("Successful!", "Account created.Please verify now!", "success")
-        if(res){
-            navigatFunction('/login')
-        }
-  })
-  .catch((err) => {
-    swal("Failed!", "something wrong.Try again!", "error")
-  });
+    e.preventDefault() 
+    const q = query(collection(db, "users"), where("email", "==", email));
+    getDocs(q)
+    .then(doc=>{
+      let user=[]
+      doc.forEach(doc=>user.push(doc.data()))
+      if(user.length>0){
+        swal("Failed!", "This mail already used.Please try another email!", "error")
+      }else{
+        
+        createUserWithEmailAndPassword(auth, email, password)
+        .then( (res)=> {
+          swal("Successful!", "Account created.Please verify now!", "success")
+            if(res){
+                navigatFunction('/login')
+            }
+          })
+          .catch((err) => {
+            swal("Failed!", "something wrong.Try again!", "error")
+          });
+          }
+    })
+    
+    //
+    
 }
 
 //-------------------user sign in with email password---------------
@@ -106,7 +120,7 @@ export const addPreviousJob=async(id,previousJob,swal)=>{
     swal("Successful!", "Experience Added!", "success");
   })
   .catch(err=>{
-    
+    swal("Failed!", "Experience Added!", "error");
   })
 }
 //-----------------------send verification email-------------------------
@@ -129,37 +143,25 @@ export const verification=(auth,id,email,successFunc)=>{
 }
 
 //--------------------change email address-----------------------
-export const changeEmail=(auth,email)=>{
-    updateEmail(auth.currentUser, email)
-    .then(() => {
-        // Email updated!
-        // ...
-      }).catch((error) => {
-        // An error occurred
-        // ...
-      });
+export const changeEmail=async(e,auth,email,swal)=>{
+  e.preventDefault()
+    await updateEmail(auth.currentUser, email)
+    swal("Successful!", "Email Changed!", "success");
 }
 
 //---------------------------------------change password-----------------------------------------------
-export const changePassword=(auth,password)=>{
-    updatePassword(auth.currentUser, password)
-    .then(() => {
-        // Update successful.
-      }).catch((error) => {
-        // An error ocurred
-        // ...
-      });
+export const changePassword=async(e,auth,password,swal)=>{
+  e.preventDefault()
+    await updatePassword(auth.currentUser, password)
+    swal("Successful!", "Password Changed!", "success");
 }
 
 //-----------------------reset password-------------------------
-export const resetPassword=(email)=>{
-    sendPasswordResetEmail(auth, email)
-    .then((res) => {
-    
-    })
-    .catch((error) => {
-    
-    });
+export const resetPassword=async(e,email,swal)=>{
+    e.preventDefault()
+    await sendPasswordResetEmail(auth, email)
+    swal("Successful!", "Check your inbox or spam box!", "success");
+    e.target.reset()
 }
 
 //--------------------delete account-------------------------

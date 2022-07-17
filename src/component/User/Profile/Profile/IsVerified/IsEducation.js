@@ -2,13 +2,15 @@
 const IsEducation = ({ssc,collage,bsc,msc}) => {
     return (
         <table className="w-full text-center mt-2">
-            <tr className="border bg-blue-100 text-center font-bold">
-                    <td>Institute Name</td>
-                    <td>Season</td>
-                    <td>Passing Year</td>
-                    <td>Group</td>
-                    <td>Result</td>
-            </tr>
+            <thead>
+                <tr className="border bg-blue-100 text-center font-bold">
+                        <td>Institute Name</td>
+                        <td>Season</td>
+                        <td>Passing Year</td>
+                        <td>Group</td>
+                        <td>Result</td>
+                </tr>
+            </thead>
             <tbody>
                 {
                     ssc.name && 

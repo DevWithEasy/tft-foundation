@@ -19,11 +19,11 @@ const LogIn = () => {
   return (<>
     {
       loading ? <Loading text='Logging'/>:
-      <div className="p-2 space-y-6">
-        <h1 className="text-2xl font-bold">Login to TFT Foundation</h1>
+      <div className="px-3 py-10 space-y-6 m-2 border rounded-md bg-gray-50">
+        <h1 className="text-xl text-slate-400 font-bold">Login to TFT Foundation</h1>
         <form className="w-full space-y-3" onSubmit={(e)=>signInHandler(e,loged.email,loged.password,dispatch,location,navigate,setLoading,swal)}>
-          <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100">
-            <span className="flex items-center px-3 "><FaUserAlt className="text-gray-400"/></span>
+          <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100 bg-white">
+            <span className="flex items-center px-3"><FaUserAlt className="text-gray-400"/></span>
           <input
             type="email"
             name="email"
@@ -33,7 +33,7 @@ const LogIn = () => {
             required
           />
           </div>
-          <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100">
+          <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100 bg-white">
             <span className="flex items-center px-3 "><FaKey className="text-gray-400"/></span>
           <input
             type="password"
@@ -50,8 +50,8 @@ const LogIn = () => {
             className="block w-28 mx-auto p-2 bg-blue-500 text-white rounded cursor-pointer"
           />
         </form>
-        <div className="text-center">
-          <span>Are you new user ? <Link to='/registration' className="font-bold text-blue-500">Registration now</Link></span><br />
+        <div className="text-center text-gray-400">
+          <span>Are you new user ? <Link to='/registration' className="font-bold text-green-500">Registration now</Link></span><br />
           <span>Forget your password? <Link to='/forgetPassword' className="font-bold text-blue-500">Reset now</Link></span>
         </div>
     </div>

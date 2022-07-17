@@ -1,7 +1,8 @@
 import { useState } from "react";
+import swal from 'sweetalert'
 import { resetPassword } from "../../../FirebaseManager/firebaseStore";
 
-const ChangeEmail = () => {
+const ForgetPassword = () => {
   const [changeEmail, setChangeEmail] = useState("");
   const handleChangeInput = (e) => {
     setChangeEmail(e.target.value);
@@ -10,7 +11,7 @@ const ChangeEmail = () => {
   return (
     <div className="m-2 mt-10 p-2 bzorder rounded shadow">
       <h1 className="text-2xl underline italic mb-4">Forget Password:</h1>
-      <form className="space-y-2" onSubmit={()=> resetPassword(changeEmail)}>
+      <form className="space-y-2" onSubmit={(e)=> resetPassword(e,changeEmail,swal)}>
         <input
           type="text"
           name="password"
@@ -28,4 +29,4 @@ const ChangeEmail = () => {
     </div>
   );
 };
-export default ChangeEmail;
+export default ForgetPassword;

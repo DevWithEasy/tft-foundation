@@ -17,15 +17,15 @@ const Registration = () => {
   //handle login form navigate
   const navigate= useNavigate()
   return (
-    <div className="p-2 space-y-6">
+    <div className="p-2 space-y-6px-3 py-10 space-y-6 m-2 border rounded-md bg-gray-50">
       <div className="">
-        <h1 className="text-2xl font-bold">Welcome to TFT Foundation</h1>
+        <h1 className="text-xl text-slate-500 font-bold">Welcome to TFT Foundation</h1>
         <span className="text-gray-400 text-sm block w-3/4">Join our professional family and creat your professional profile easily.
         Communicate all member and get job offer and circular
         </span>
       </div>
       <form className="w-full space-y-3" onSubmit={(e)=>signUpHandler(e,signUp.email,signUp.password,navigate,swal)}>
-        <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100">
+        <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100 bg-white">
           <span className="flex items-center px-3 "><FaUserAlt className="text-gray-400"/></span>
           <input
             type="email"
@@ -36,10 +36,10 @@ const Registration = () => {
             required
           />
         </div>
-        <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100">
+        <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100 bg-white">
           <span className="flex items-center px-3 "><FaKey className="text-gray-400"/></span>
           <input
-            type="password"
+            type="text"
             name="password"
             className="w-full p-2 border-none focus:outline-none rounded"
             placeholder="Enter strong password"
@@ -57,8 +57,8 @@ const Registration = () => {
             className="block w-40 mx-auto p-2 bg-blue-500 text-white rounded cursor-pointer"
           />
       </form>
-      <div className="text-center">
-        <span>Are you alreary user ? <Link to='/login' className="font-bold text-blue-500">Login now</Link></span><br />
+      <div className="text-center text-gray-400">
+        <span>Are you alreary user ? <Link to='/login' className="font-bold text-green-500">Login now</Link></span><br />
         <span>Forget your password? <Link to='/forgetPassword' className="font-bold text-blue-500">Reset now</Link></span>
       </div>
     </div>

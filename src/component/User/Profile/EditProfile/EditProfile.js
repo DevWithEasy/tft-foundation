@@ -1,14 +1,15 @@
 import { doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from "react";
+import { FiMail } from 'react-icons/fi';
+import { MdPassword } from 'react-icons/md';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { db } from './../../../../FirebaseManager/firebaseStore';
 import AccountInfo from "./AccountInfo";
 import EducationInfo from "./EducationInfo";
 import ExperienceInfo from "./ExperienceInfo";
 import PersonalInfo from "./PersonalInfo";
-import { Link } from 'react-router-dom';
-import {FiMail} from 'react-icons/fi'
-import {MdPassword} from 'react-icons/md'
+import Resposibility from './Resposibility';
 const EditProfile = () => {
   const [user, setUser] = useState({
     id:'',
@@ -46,7 +47,7 @@ const EditProfile = () => {
       to: ""
     },
     previousJob: [],
-    responsibity:[],
+    responsibility:[],
     ssc: {
       name: "",
       season: "",
@@ -169,7 +170,6 @@ const EditProfile = () => {
       }
     });
   };
-
   return (
     <div className="m-1 mt-5 space-y-2">
       <AccountInfo user={user} handleChange={handleChange} />
@@ -179,6 +179,9 @@ const EditProfile = () => {
         previousJob={previousJob}
         handlePreviousJobInput = {handlePreviousJobInput}
       />
+      
+      <Resposibility user={user}/>
+      
       <EducationInfo
         user={user}
         handleInput={{
@@ -197,10 +200,10 @@ const EditProfile = () => {
         }}
       />
       <Link to={`/changePassword/${id}`} className="flex items-center space-x-2  font-bold bg-blue-500 p-2 text-white  hover:bg-blue-600 transition-all duaration-500 cursor-pointer rounded">
-         <FiMail size={25}/> <span>Change Email</span>
+         <FiMail size={25}/> <span>Change Password</span>
       </Link>
       <Link to={`/changeEmail/${id}`} className="flex items-center space-x-2  font-bold bg-blue-500 p-2 text-white  hover:bg-blue-600 transition-all duaration-500 cursor-pointer rounded">
-          <MdPassword size={25}/>  <span>Change Password</span>
+          <MdPassword size={25}/>  <span>Change Email</span>
       </Link>
     </div>
   );
