@@ -191,6 +191,7 @@ export const addComment=async(e,id,comment,swal)=>{
   e.target.reset()
   swal("Successfull", "Your comment added!", "success");
 }
+
 export const removeComment=async(id,comment,swal)=>{
   const commentRef= doc(db,'jobcircular',id)
   await updateDoc(commentRef,{

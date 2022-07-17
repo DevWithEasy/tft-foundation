@@ -8,7 +8,7 @@ const PersonalInfo = ({ user, handleInput }) => {
     handlePresentAddressInput,
     handlePermanentAddressInput
   } = handleInput;
-  const [personal, setPersonal] = useState(true);
+  const [personal, setPersonal] = useState(false);
   return (
     <div className="space-y-2">
       <h3

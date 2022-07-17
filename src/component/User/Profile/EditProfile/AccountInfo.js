@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { updateUserProfile } from './../../../../FirebaseManager/firebaseStore';
 
 const AccountInfo = ({ user, handleChange }) => {
-  const [account, setAccount] = useState(true);
+  const [account, setAccount] = useState(false);
   return (
     <div className="">
       <h3

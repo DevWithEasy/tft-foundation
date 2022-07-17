@@ -7,6 +7,7 @@ import EditPost from "../component/Job/EditPost/EditPost";
 import FindJob from "../component/Job/FindJob/FindJob";
 import JobDetails from "../component/Job/FindJob/JobDetails/JobDetails";
 import NotFound from "../component/NotFound/NotFound";
+import FindPeople from "../component/People/FindPeople";
 import PrivacyPolicy from "../component/PrivacyPolicy/PrivacyPolicy";
 import PrivateRoute from "../component/PrivateRoute/PrivateRoute";
 import ChangePassword from "../component/User/ChangeEmailPassword/ChangePassword";
@@ -26,7 +27,7 @@ const RouterManager = () => {
       <Route path="/login" element={<LogIn />} />
       <Route path="/forgetPassword" element={<ForgetPassword />} />
       <Route path="/findJob" element={<FindJob />} />
-      <Route path="/findPeople" element={<findPeople />} />
+      <Route path="/findPeople" element={<FindPeople />} />
       <Route path="/connect" element={<ContactUs />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/faq" element={<Faq />} />

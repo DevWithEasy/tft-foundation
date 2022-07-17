@@ -4,6 +4,10 @@ export const headerLink=[
         link:"/findjob",
     },
     {
+        title:"Post a Job",
+        link:"/postJob",
+    },
+    {
         title:"Find People",
         link:"/findpeople",
     },

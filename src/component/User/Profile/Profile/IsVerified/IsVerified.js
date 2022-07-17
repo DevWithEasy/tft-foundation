@@ -31,12 +31,12 @@ const IsVerified = ({profile}) => {
               <p className="text-gray-500">{profile.presentCompany.designation}</p>
               <div className="flex justify-end">
                 <div className="flex space-x-5">
-                  <IsContact contact={profile.contactNumber} type='tel:' Icon={FiPhoneCall}/>
-                  <IsContact contact={profile.email} type='mail:' Icon={MdEmail}/>
-                  <IsContact contact={profile.fbLink} type='https://m.me/' Icon={BsMessenger}/>
-                  <IsContact contact={profile.fbLink} type='https://facebook.com/' Icon={BsFacebook}/>
+                  <IsContact contact={profile.contactNumber} type='tel:' className='' Icon={FiPhoneCall}/>
+                  <IsContact contact={profile.email} type='mailto:' className='text-slate-500' Icon={MdEmail}/>
+                  <IsContact contact={profile.fbLink} type='https://m.me/' className='text-blue-500' Icon={BsMessenger}/>
+                  <IsContact contact={profile.fbLink} type='https://facebook.com/' className='text-blue-500' Icon={BsFacebook}/>
                   {
-                    user.uid === id ? <Link to={`/editprofile/${id}`} className='flex items-center'> <BiEdit/> Edit profile</Link>:''
+                    user.uid === id ? <Link to={`/editprofile/${id}`} className='flex items-center space-x-1'> <BiEdit/> Edit profile</Link>:''
                   }
                 </div>
               </div>

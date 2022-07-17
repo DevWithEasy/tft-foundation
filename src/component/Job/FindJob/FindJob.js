@@ -1,6 +1,7 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../FirebaseManager/firebaseStore";
+import Loading from "../../Loading/Loading";
 import JobLink from "./JobDetails/JobLink";
 
 const FindJob = () => {
@@ -12,14 +13,14 @@ const FindJob = () => {
       setPosts(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     });
   }, []);
-  console.log(posts)
-  return <div className="">
+  
+  return <>
     {
       posts.length>0 ?
       posts.map((post,index)=><JobLink key={index} post={post}/>)
       :
-      <p>Loading</p> 
+      <Loading/>
     }
-  </div>;
+  </>;
 };
 export default FindJob;
