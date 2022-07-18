@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 /* homepage css*/
-.firstHalf{
-    @apply w-full space-y-2 flex flex-col items-center justify-center
-}
+
 .wellcome{
     @apply flex justify-between py-6 bg-blue-400 text-white
 }
@@ -24,7 +22,7 @@
 
 
 .input{
-    @apply w-full p-2 rounded border-2 focus:outline-none focus:border-blue-500 placeholder:text-xs
+    @apply w-full p-2 rounded border focus:outline-none focus:border-blue-500 placeholder:text-gray-300
 }
 .joblink-text{
     @apply flex items-center space-x-1 text-gray-600 text-sm

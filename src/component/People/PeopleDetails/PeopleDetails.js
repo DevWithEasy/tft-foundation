@@ -6,14 +6,17 @@ import { addConnection } from '../../../FunctionManager/ArrayUnion';
 
 const PeopleDetails = ({user}) => {
     const {uid} = useSelector(state=>state.user)
-    return (<div  className='w-1/2 flex flex-col justify-center items-center p-2 border rounded-lg'>
+    return (<div  className='w-full flex flex-col justify-center items-center p-2 border rounded-lg'>
         <img
                 src={user.profileImg}
                 alt=""
                 className="h-24 w-24 rounded-full border border-blue-500 shadow-lg"
         />
-        <Link to={`/profile/${user.id}`} className='text-xl text-blue-500 font-bold mt-4'>{user.name}</Link>
         
+
+        {
+            !user.name ? <p>--</p>:<Link to={`/profile/${user.id}`} className='text-xl text-blue-500 font-bold mt-4'>{user.name}</Link>
+        }
         {
             user.presentCompany.designation ?
              <p className='text-gray-500'>{user.presentCompany.designation}</p>

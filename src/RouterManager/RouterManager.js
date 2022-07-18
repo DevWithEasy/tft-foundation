@@ -6,6 +6,7 @@ import Homepage from "../component/Homepage/Homepage";
 import EditPost from "../component/Job/EditPost/EditPost";
 import FindJob from "../component/Job/FindJob/FindJob";
 import JobDetails from "../component/Job/FindJob/JobDetails/JobDetails";
+import PostJob from "../component/Job/PostJob/PostJob";
 import NotFound from "../component/NotFound/NotFound";
 import FindPeople from "../component/People/FindPeople";
 import PrivacyPolicy from "../component/PrivacyPolicy/PrivacyPolicy";
@@ -39,7 +40,7 @@ const RouterManager = () => {
         <Route path="changePassword/:id" element={<ChangePassword />} />
         <Route path="changeEmail/:id" element={<ChangeEmail />} />
         <Route path="editPost/:id" element={<EditPost />} />
-        <Route path="postJob" element={<postJob />} />
+        <Route path="postJob" element={<PostJob />} />
         <Route path="jobDetails/:id" element={<JobDetails />} />
       </Route>
       <Route path="*" element={<NotFound />} />

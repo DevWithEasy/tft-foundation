@@ -7,7 +7,7 @@ const IsNotVerified = () => {
     const [send,setSend] = useState(false)
     const user = useSelector(state=>state.user)
     return (
-        <div className="m-2 mt-10 px-2 py-6 border shadow rounded">
+        <div className="m-2 my-10 mt-10 bg-gray-50 px-2 py-6 border shadow rounded">
             {!send?
             <div className="space-y-3 text-center">
                 <span className="text-2xl text-blue-500 font-bold underline">Account verification:</span>

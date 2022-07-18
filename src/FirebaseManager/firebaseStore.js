@@ -86,7 +86,7 @@ export const signInHandler=async(e,email,password,dispachFunction,location,navig
       }
     })
     .catch((err) => {
-      swal("Failed!", "Please Enter correct mail and password!", "success")
+      swal("Failed!", "Please Enter correct mail and password!", "error")
       setLoading(false)
     });
 
@@ -113,6 +113,7 @@ export const updateUserProfile = (id,userProfileData,swal)=>{
       swal("Failed!", "Profile update!", "error")
     })
 }
+// -----------previous job add remove---------------
 export const addPreviousJob=async(id,previousJob,swal)=>{
   const profileDocRef = doc(db,'users',id)
   await updateDoc(profileDocRef, {
@@ -123,6 +124,18 @@ export const addPreviousJob=async(id,previousJob,swal)=>{
   })
   .catch(err=>{
     swal("Failed!", "Experience Added!", "error");
+  })
+}
+export const removePreviousJob=async(id,previousJob,swal)=>{
+  const profileDocRef = doc(db,'users',id)
+  await updateDoc(profileDocRef, {
+    previousJob: arrayRemove(previousJob)
+  })
+  .then(res=>{
+    swal("Successful!", "Experience delete!", "success");
+  })
+  .catch(err=>{
+    swal("Failed!", "Experience delete!", "error");
   })
 }
 //-----------------------send verification email-------------------------

@@ -49,8 +49,12 @@ const PostJob = () => {
       alert('add failed')
     })
   }
-  console.log(post)
-  return <div className="m-4">
+  return <div className="bg-blue-100 p-2">
+    <div className="bg-white px-2 pb-4 rounded-lg">
+      <p className="px-2 pb-2">
+      <span className="font-bold">Creat a Job post:</span><br />
+      <span className="text-xs text-red-500">Please fill the all blank with correct information.</span>
+      </p>
     <form className="space-y-2" onSubmit={postJob}>
     <input
           type="text"
@@ -125,6 +129,7 @@ const PostJob = () => {
     <input type="submit" value="Submit" className="mt-4 px-10 py-2 bg-blue-500 text-white rounded cursor-pointer"/>
     </form>
     <ToastContainer autoClose={2000}/>
+    </div>
   </div>;
 };
 export default PostJob;

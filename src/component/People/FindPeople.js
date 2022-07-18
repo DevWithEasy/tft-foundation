@@ -12,11 +12,10 @@ const FindPeople = () => {
       setUsers(res.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     });
   }, []);
-  console.log(users);
   return <>
     {
       users.length>0 ?
-      <div className="flex gap-2 m-2">
+      <div className="grid grid-cols-2 m-2 gap-2">
         {users.map(user=><PeopleDetails key={user.id} user={user}/>)}
       </div>
       :

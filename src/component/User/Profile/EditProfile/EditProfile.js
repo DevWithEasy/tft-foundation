@@ -11,6 +11,7 @@ import ExperienceInfo from "./ExperienceInfo";
 import PersonalInfo from "./PersonalInfo";
 import Resposibility from './Resposibility';
 const EditProfile = () => {
+  const {id} =useParams()
   const [user, setUser] = useState({
     id:'',
     name: "",
@@ -78,6 +79,7 @@ const EditProfile = () => {
     }
     });
   const [previousJob,setPreviousJob]= useState({
+    id:id,
     name:'',
     designation:'',
     location:'',
@@ -85,7 +87,6 @@ const EditProfile = () => {
     to:'',
     year:''
   })
-  const {id} =useParams()
   useEffect(()=>{
     getDoc(doc(db,'users',id))
     .then(res=>{

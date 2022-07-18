@@ -22,12 +22,12 @@ export const addResponsibility=async(e,id,res,swal)=>{
     await updateDoc(connectionRef,{
       connection:arrayUnion(connectId)
     });
-    swal("Successfull", "Your Responsibility added!", "success");
+    swal("Successfull", "People added!", "success");
   }
   export const removeConnection=async(id,connectId,swal)=>{
     const connectionRef= doc(db,'users',id)
     await updateDoc(connectionRef,{
       responsibility:arrayRemove(connectId)
     });
-    swal("Successfull", "Your Responsibility Delete!", "success");
+    swal("Successfull", "People Delete!", "success");
   }

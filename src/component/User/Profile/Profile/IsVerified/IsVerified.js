@@ -54,10 +54,10 @@ const IsVerified = ({profile}) => {
                 </div>
                 <div className="px-2 space-y-2">
                   {profile.previousJob.length>0 && 
-                  profile.previousJob.map((job,index)=><IsPreviousJob key={index} job={job} value={index+1}/>)}
+                  profile.previousJob.map((job,index)=><IsPreviousJob key={index} job={job} value={index+1} id={id}/>)}
                 </div>
                 {
-                  profile.responsibility.length ? <IsResponsibility response={profile.responsibility} id={profile.id}/> :''
+                  profile.responsibility?.length ? <IsResponsibility response={profile.responsibility} id={profile.id}/> :''
                 }
                 <div className="px-2">
                   <h3 className="bg-gray-200 px-2 p-1 my-1 font-bold text-2xl">Education :</h3>

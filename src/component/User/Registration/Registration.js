@@ -22,7 +22,7 @@ const Registration = () => {
       {
         loading ? <Loading text='signing'/>
         :
-        <div className="p-2 space-y-6px-3 py-10 space-y-6 m-2 border rounded-md bg-gray-50">
+        <div className="px-3 pt-5 pb-10 space-y-6 m-2 my-10 border rounded-md bg-gray-50">
       <div className="">
         <h1 className="text-xl text-slate-500 font-bold">Welcome to TFT Foundation</h1>
         <span className="text-gray-400 text-sm block w-3/4">Join our professional family and creat your professional profile easily.
