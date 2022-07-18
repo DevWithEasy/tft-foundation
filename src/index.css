@@ -5,7 +5,7 @@
 /* homepage css*/
 
 .wellcome{
-    @apply flex justify-between py-6 bg-blue-400 text-white
+    @apply flex justify-between py-10 bg-blue-400 text-white
 }
 .jobcircular{
     @apply flex justify-between py-6  bg-gray-50

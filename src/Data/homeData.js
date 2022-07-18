@@ -28,7 +28,7 @@ export const activity=[
     {
         id:4,
         title:'Find People',
-        desc:'Communicate  person',
+        desc:'Professional person',
         img:people,
         path:'/findPeople'
     }
