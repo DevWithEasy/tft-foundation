@@ -13,7 +13,7 @@ export const activity=[
     },
     {
         id:2,
-        title:'Arrange Enternship',
+        title:'Enternship',
         desc:'We help to get Enternship',
         img:enternship,
         path:''
@@ -28,7 +28,7 @@ export const activity=[
     {
         id:4,
         title:'Find People',
-        desc:'Communicate professional person',
+        desc:'Communicate  person',
         img:people,
         path:'/findPeople'
     }

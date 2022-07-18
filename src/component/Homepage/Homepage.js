@@ -14,9 +14,11 @@ const Homepage = () => {
     <div className="grid grid-cols-2 gap-1 p-2 py-5 bg-gray-100">
       {
         activity.map(ac=>
-          <div className="flex flex-col justify-center items-center space-y-2 p-1 py-3 border rounded-lg bg-white ">
-            <img src={ac.img} alt="" className='h-24'/>
-            <p className="text-blue-500 text-xl border border-blue-100 px-3 py-0.5 rounded-full shadow shadow-blue-100">{ac.title}</p>
+          <div className="flex flex-col justify-center items-center space-y-2 p-1 py-5 border rounded-lg bg-white ">
+            <div className='h-24 mb-2'>
+              <img src={ac.img} alt="" className='h-24'/>
+            </div>
+            <p className="bg-blue-500 text-white text-xl px-3 py-0.5 rounded-full shadow-lg">{ac.title}</p>
             <p className="">{ac.desc}</p>
           </div>
         )
