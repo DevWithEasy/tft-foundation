@@ -1,12 +1,12 @@
-import job from './../assets/activity_job.png';
-import enternship from './../assets/activity_training.png';
-import social from './../assets/activity_social.png';
 import people from './../assets/activity_find.png';
+import job from './../assets/activity_job.png';
+import social from './../assets/activity_social.png';
+import enternship from './../assets/activity_training.png';
 
 export const activity=[
     {
         id:1,
-        title:'Arange Job',
+        title:'Arrange Job',
         desc:'Here find your dream job.',
         img:job,
         path:'/findJob'
@@ -16,14 +16,14 @@ export const activity=[
         title:'Enternship',
         desc:'We help to get Enternship',
         img:enternship,
-        path:''
+        path:'/connect'
     },
     {
         id:3,
         title:'Social Activity',
         desc:'We arrange social activities',
         img:social,
-        path:''
+        path:'/gallery'
     },
     {
         id:4,

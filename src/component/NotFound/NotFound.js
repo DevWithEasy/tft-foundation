@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 const NotFound = () => {
   const navigate = useNavigate();
   return (
-    <div className="p-4 space-y-2 text-center">
+    <div className="flex flex-col justify-center items-center p-4 space-y-2 text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-28 w-28 mx-auto text-yellow-600"
