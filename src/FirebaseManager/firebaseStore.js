@@ -114,7 +114,8 @@ export const updateUserProfile = (id,userProfileData,swal)=>{
     })
 }
 // -----------previous job add remove---------------
-export const addPreviousJob=async(id,previousJob,swal)=>{
+export const addPreviousJob=async(e,id,previousJob,swal)=>{
+  e.preventDefault()
   const profileDocRef = doc(db,'users',id)
   await updateDoc(profileDocRef, {
     previousJob: arrayUnion(previousJob)
@@ -125,6 +126,7 @@ export const addPreviousJob=async(id,previousJob,swal)=>{
   .catch(err=>{
     swal("Failed!", "Experience Added!", "error");
   })
+  e.target.reset()
 }
 export const removePreviousJob=async(id,previousJob,swal)=>{
   const profileDocRef = doc(db,'users',id)

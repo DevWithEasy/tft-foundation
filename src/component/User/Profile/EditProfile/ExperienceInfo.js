@@ -74,7 +74,7 @@ const ExperienceInfo = ({ user, handlePresentCompanyInput,previousJob,handlePrev
           </button>
         </div>
         {/* -------------------Previous job-------------------------- */}
-        <div className="mt-2">
+        <form className="mt-2" onSubmit={(e)=>addPreviousJob(e,user.id,previousJob,swal)}>
           <h3 className="italic font-bold bg-gray-200 p-1">Prevoius Job:</h3>
           <label className="text-sm pl-1">Company Name:</label>
           <input
@@ -132,12 +132,8 @@ const ExperienceInfo = ({ user, handlePresentCompanyInput,previousJob,handlePrev
               />
             </div>
           </div>
-          <button className="p-2 w-24 mt-2 bg-blue-500 rounded text-white "
-            onClick={()=>addPreviousJob(user.id,previousJob,swal)}
-            >
-            Add
-          </button>
-        </div>
+          <input type='submit' value='Add' className="p-2 w-24 mt-2 bg-blue-500 rounded text-white "/>
+        </form>
       </div>
     </div>
   );

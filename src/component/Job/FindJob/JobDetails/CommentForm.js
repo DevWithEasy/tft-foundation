@@ -17,7 +17,7 @@ const CommentForm = ({handleChange,addComment,id,comment}) => {
                   <input 
                         type="submit"
                         value="Comment"
-                        className='bg-blue-400 text-white py-1 px-3 rounded'
+                        className='bg-blue-400 text-white py-1 px-3 rounded cursor-pointer'
                    />
             </form>
         </div>
