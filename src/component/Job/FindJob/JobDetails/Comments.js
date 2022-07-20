@@ -1,8 +1,10 @@
 import React from 'react';
 import { BsTrash } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
 const Comments = ({comment,removeComment,uid,id}) => {
+    const navigate = useNavigate()
     return (
         <div className='bg-blue-50 border px-2 py-1 rounded-lg'>
             <p className='flex justify-between items-center'>
@@ -11,7 +13,7 @@ const Comments = ({comment,removeComment,uid,id}) => {
                     <span className='text-[10px] text-gray-500'>{comment.time}</span>
                 </p>
                 {
-                    uid===comment.id ? <BsTrash onClick={()=>removeComment(id,comment,swal)}/>:''
+                    uid===comment.id ? <BsTrash onClick={()=>removeComment(id,comment,swal,navigate)}/>:''
                 }
             </p>
             <p>{comment.text}</p>

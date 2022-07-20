@@ -199,7 +199,7 @@ export const getDetails =async(collection,id,setFunc)=>{
     })
 }
 
-export const addComment=async(e,id,comment,swal)=>{
+export const addComment=async(e,id,comment,swal,navigate)=>{
   e.preventDefault()
   const commentRef= doc(db,'jobcircular',id)
   await updateDoc(commentRef,{
@@ -207,12 +207,14 @@ export const addComment=async(e,id,comment,swal)=>{
   });
   e.target.reset()
   swal("Successfull", "Your comment added!", "success");
+  navigate(`/jobDetails/${id}`)
 }
 
-export const removeComment=async(id,comment,swal)=>{
+export const removeComment=async(id,comment,swal,navigate)=>{
   const commentRef= doc(db,'jobcircular',id)
   await updateDoc(commentRef,{
     comments:arrayRemove(comment)
   })
   swal("Successfull", "Your comment delete!", "success");
+  navigate(`/jobDetails/${id}`)
 }

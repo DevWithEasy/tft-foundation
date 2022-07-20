@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert'
 
 const CommentForm = ({handleChange,addComment,id,comment}) => {
+    const navigate = useNavigate()
     return (
         <div>
-            <form className='' onSubmit={(e)=>addComment(e,id,comment,swal)}>
+            <form className='' onSubmit={(e)=>addComment(e,id,comment,swal,navigate)}>
                   <textarea 
                         name="text"
                         rows="2"

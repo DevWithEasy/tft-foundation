@@ -19,7 +19,7 @@ const LogIn = () => {
   return (<>
     {
       loading ? <Loading text='Logging'/>:
-      <div className="px-3 py-10 space-y-6 m-2 my-10 border rounded-md bg-gray-50">
+      <div className="px-3 py-10 space-y-6 m-2 my-40 border rounded-md bg-gray-50">
         <h1 className="text-xl text-slate-400 font-bold">Login to TFT Foundation</h1>
         <form className="w-full space-y-3" onSubmit={(e)=>signInHandler(e,loged.email,loged.password,dispatch,location,navigate,setLoading,swal)}>
           <div className="flex items-center border border-blue-100 rounded shadow shadow-blue-100 bg-white">
