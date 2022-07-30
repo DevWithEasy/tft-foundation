@@ -77,7 +77,7 @@ const Profile = () => {
   const {user} = useSelector(state=>state)
   useEffect(()=>{
      getDetails('users',id,setProfile)
-  },[])
+  })
   return (
     <div className="">
       {

@@ -12,7 +12,7 @@ const JobDetails = () => {
     const [jobDetails,setJobDetails] = useState({})
     useEffect(()=>{
       getDetails('jobcircular',id,setJobDetails)
-    },[])
+    })
     //-----------------comment-----------------
     const {uid,displayName} = useSelector(state=>state.user)
     const [comment,setComment]=useState({

@@ -10,7 +10,7 @@ const ContactUs = () => {
         e.target,
         "U3ffMFVVK-oG0N8Ps"
       )
-      .then((res) => console.log(res))
+      .then((res) => e.target.reset())
       .catch((err) => console.log(err));
   };
   return (
