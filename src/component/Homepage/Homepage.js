@@ -1,7 +1,14 @@
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { activity } from '../../Data/homeData';
+import { addUser } from '../../ReduxManager/Action';
 const Homepage = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const user= (JSON.parse(localStorage.getItem('user')));
+  if (user){
+    dispatch(addUser(user))
+  }
   return <div className="">
     {/* wellcome */}
     <div className="wellcome">

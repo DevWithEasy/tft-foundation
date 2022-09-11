@@ -31,6 +31,7 @@ export const signIn =(dispachFunction)=>{
 export const signOutHandler=(dispatch,navigate,menu,setMenu)=>{
     signOut(auth)
     .then(res=>{
+      localStorage.removeItem("user");
       dispatch(removeUser())
       navigate('/')
       console.log('successfully logout')
@@ -77,7 +78,7 @@ export const signInHandler=async(e,email,password,dispachFunction,location,navig
     setLoading(true)
     await signInWithEmailAndPassword(auth, email, password)
     .then((res) => {
-      console.log('success')
+      localStorage.setItem("user", JSON.stringify(res.user));
       dispachFunction(addUser(res.user))
       if(location.state?.from){
           navigate(location.state.from)

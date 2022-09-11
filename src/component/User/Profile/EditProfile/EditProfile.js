@@ -95,7 +95,7 @@ const EditProfile = () => {
     .catch(err=>{
       console.log(err)
     })
-  },[])
+  })
 
   const handleChange = (e) => {
     setUser({
